@@ -1,0 +1,4 @@
+Flask
+paho-mqtt
+unicode_slugify
+pathlib

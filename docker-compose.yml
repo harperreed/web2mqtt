@@ -1,0 +1,10 @@
+version: '2'
+services:
+  home-notifier:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: home-notifier
+    restart: unless-stopped
+    ports:
+      - 5123:5000
