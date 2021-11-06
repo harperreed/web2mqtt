@@ -18,6 +18,3 @@ def translate(topic, payload):
     publish.single(topic, payload=payload, qos=0, retain=False, hostname=mqtt_server, port=1883,keepalive=60, protocol=mqtt.MQTTv311, transport="tcp")
 
     return 'OK'
-
-if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0', port=5123)
