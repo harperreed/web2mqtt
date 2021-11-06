@@ -3,11 +3,6 @@ import paho.mqtt.publish as publish
 import paho.mqtt.client as mqtt
 
 import logging
-import os
-
-from slugify import slugify
-from pathlib import Path
-from urllib.parse import urlparse
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
