@@ -18,3 +18,7 @@ def translate(topic, payload):
     publish.single(topic, payload=payload, qos=0, retain=False, hostname=mqtt_server, port=1883,keepalive=60, protocol=mqtt.MQTTv311, transport="tcp")
 
     return 'OK'
+
+@app.route('/')
+def hello():
+    return 'web2mqtt'
