@@ -15,7 +15,7 @@ def translate(topic, payload):
     topic = topic.replace('-', '/')
 
     mqtt_server = "192.168.200.8"
-    publish.single(topic, payload=payload, qos=0, retain=False, hostname=mqtt_server, port=1883,keepalive=60, protocol=mqtt.MQTTv311, transport="tcp")
+    publish.single(topic, payload=payload, qos=0, retain=True, hostname=mqtt_server, port=1883,keepalive=60, protocol=mqtt.MQTTv311, transport="tcp")
 
     return 'OK'
 
