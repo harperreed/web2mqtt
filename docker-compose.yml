@@ -1,18 +1,16 @@
-version: '3.8'
-
 services:
-  web2mqtt:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: web2mqtt
-    restart: unless-stopped
-    ports:
-      - "8127:8127"
-    environment:
-      - MQTT_SERVER=192.168.200.8
-      - MQTT_PORT=1883
-      - MQTT_KEEPALIVE=60
-      - FLASK_RUN_PORT=8127
-    volumes:
-      - ./:/app
+    web2mqtt:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: web2mqtt
+        restart: unless-stopped
+        ports:
+            - "8127:8127"
+        environment:
+            - MQTT_SERVER=192.168.200.8
+            - MQTT_PORT=1883
+            - MQTT_KEEPALIVE=60
+            - FLASK_RUN_PORT=8127
+        volumes:
+            - ./:/app
