@@ -4,14 +4,14 @@ Welcome to the **web2mqtt** repository! This project is a Flask-based web servic
 
 ## Summary of Project 📝
 
-**web2mqtt** allows users to communicate with MQTT brokers using HTTP POST requests directly from a web interface. Whether you're a developer looking to integrate your web services with IoT devices, or simply exploring ways to bridge the HTTP and MQTT protocols, **web2mqtt** is the perfect tool for you! 
+**web2mqtt** allows users to communicate with MQTT brokers using HTTP POST requests directly from a web interface. Whether you're a developer looking to integrate your web services with IoT devices or simply exploring ways to bridge the HTTP and MQTT protocols, **web2mqtt** is the perfect tool for you! 
 
-## Features 🌟
+### Features 🌟
 
 - Translates HTTP POST requests into MQTT messages 📩
 - Configurable MQTT broker settings via environment variables ⚙️
 - Comprehensive logging for easier debugging 🐞
-- Easy deployment with Docker and docker-compose 🐳
+- Easy deployment using Docker and docker-compose 🐳
 
 ## How to Use 🚀
 
