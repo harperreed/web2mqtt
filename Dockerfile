@@ -1,18 +1,19 @@
-FROM python:3.9-slim
+# syntax=docker/dockerfile:1.9
+FROM ubuntu:noble AS build
 
-WORKDIR /app
+# The following does not work in Podman unless you build in Docker
+# compatibility mode: <https://github.com/containers/podman/issues/8477>
+# You can manually prepend every RUN script with `set -ex` too.
+SHELL ["sh", "-exc"]
 
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+# Security-conscious organizations should package/review uv themselves.
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
 
-RUN apt-get update && apt-get install -y --no-install-recommends gcc && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
-
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# set up a virtual env to use for whatever app is destined for this container.
+RUN uv venv --python 3.12.5 /venv
 
 COPY . .
 
 EXPOSE 8127
 
-CMD ["python", "main.py"]
+CMD ["uv", "run", "main.py"]
