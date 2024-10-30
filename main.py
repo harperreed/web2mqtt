@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, jsonify
+from flask import Flask
 import paho.mqtt.publish as publish
 import paho.mqtt.client as mqtt
 import logging
